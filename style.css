@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&family=Roboto&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin-top: 100px;
+}
+
+h2 {
+    margin: 0px 0px;
+}
+
+#conteneurTranches {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.saisie {
+    margin-bottom: 100px;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    background-color: #368bf5;
+    padding: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+input, select {
+    margin-right: 15px;
+}
+
+.tranches {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+    background-color: #f2f2f2;
+    padding: 50px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.conteneur-secondaire {
+    display: flex;
+}
+
+.mois {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.mois-infos {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.brut-mens {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.montant {
+    font-size: 1.5em;
+    color: #5b1cb1;
+    font-weight: bold;
+    margin: 0px 0px !important;
+}
+
+.conteneur-plafu2 {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.sous-conteneur {
+    display: flex;
+}
+
+.gauche-infos, .droit-infos {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+
+
+
+.gauche-infos {
+    justify-content: flex-end;
+}
+
+
+.plaf-conteneur {
+    text-align: center;
+    position: relative;
+    height: 300px;
+    width: 200px;
+    background-color: #01d2d6;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.droit-infos {
+    text-align: center;
+}
+
+.infos2-droit {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.infos1, .infos2, .infos3 {
+    margin-bottom: 10px;
+}
+
+
+.tu1 {
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    width: 100%;
+    background-color: #368bf5;
+    animation-name: tranche;
+    animation-duration: 2s;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.tu2 {
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    width: 100%;
+    background-color: #368bf5;
+    animation-name: tranche;
+    animation-duration: 2s;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.montant-tu1, .montant-tu2 {
+    position: relative;
+    top: -29px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+@keyframes tranche {
+    from {
+        height: 0;
+    }
+}

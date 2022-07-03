@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul des tranches utnifiées</title>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+    <div class="saisie">
+        <form>
+            <label for="moisCourant">
+                mois courant
+                <select type="text" name="moisCourant" id="moisCourant" required>
+                    <option value="default">choisir le mois</option>
+                    <option value="janvier">janvier</option>
+                    <option value="février">février</option>
+                    <option value="mars">mars</option>
+                    <option value="avril">avril</option>
+                    <option value="mai">mai</option>
+                    <option value="juin">juin</option>
+                    <option value="juillet">juillet</option>
+                    <option value="août">août</option>
+                    <option value="septembre">septembre</option>
+                    <option value="octobre">octobre</option>
+                    <option value="novembre">novembre</option>
+                    <option value="jdécembre">décembre</option>
+                </select>
+            </label>
+            <label for="brut">
+                salaire brut
+                <input type="number" name="brut" id="brut"/>
+            </label>
+            <label for="plafu">
+                pmss
+                <input type="number" name="plafu" id="plafu"/>
+            </label>
+            <button type="submit" id="calculer">ajouter</button>
+        </form>
+    </div>
+    <div id="conteneurTranches"></div>
+
+    <script src="/ManipulationDOM.js" type="text/javascript"></script>
+    <script src="/Tranche.js" type="text/javascript"></script>
+    <script src="/app.js" type="text/javascript"></script>
+</body>
+</html>
