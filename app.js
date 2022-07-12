@@ -72,7 +72,6 @@ function constructionHtmlCode(){
         div.innerHTML = dom.template(i === tableauTranche.length -1);
         html += div.outerHTML;
         dom.styleTu1();
-        dom.autoScrollVersLeBas();
     }
 
     dom.render(html);

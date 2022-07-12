@@ -96,5 +96,6 @@ class ManipulationDOM{
 
     render(html){
         conteneurTranchesId.innerHTML = html;
+        this.autoScrollVersLeBas();
     }
 }
