@@ -77,6 +77,7 @@ class CalculTranche{
 
         this.calculTu1();
         this.calculTu2();
+
     }
 
     affichage(){
