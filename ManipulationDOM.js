@@ -90,7 +90,7 @@ class ManipulationDOM{
     }
 
     autoScrollVersLeBas(){
-        window.scrollTo(2000,2000);
+        window.scrollTo(100000,100000);
     }
 
 

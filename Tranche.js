@@ -1,8 +1,8 @@
 class CalculTranche{
     constructor(p_mois, p_brut, p_plafu1){
-        this.brut = p_brut ;
+        this.brut = +p_brut.toFixed(2) ;
         this._$brut = 0;
-        this.plafu1 = p_plafu1;
+        this.plafu1 = +p_plafu1.toFixed(2);
         this.plafu2 = 0;
         this._$plafu1 = 0;
         this._$plafu2 = 0;
@@ -16,27 +16,27 @@ class CalculTranche{
     }
 
     cumulBrut(brut){
-        if(brut) return this._$brut = Math.ceil(brut + this.brut);
-       return this._$brut += Math.ceil(this.brut);
+        if(brut) return this._$brut = +(brut + this.brut).toFixed(2);
+       return this._$brut += +(this.brut).toFixed(2);
     }   
 
     cumulPlafu1(plafu1){
-        if(plafu1) return this._$plafu1 = Math.ceil(plafu1 + this.plafu1);
-       return this._$plafu1 += Math.ceil(this.plafu1);
+        if(plafu1) return this._$plafu1 = +(plafu1 + this.plafu1).toFixed(2);
+       return this._$plafu1 += +(this.plafu1).toFixed(2);
     }
 
     cumulPlafu2(plafu2){
-        if(plafu2) return this._$plafu2 = Math.ceil(plafu2 + this.plafu2);
-        return this._$plafu2 += Math.ceil(this.plafu2);
+        if(plafu2) return this._$plafu2 = +(plafu2 + this.plafu2).toFixed(2);
+        return this._$plafu2 += +(this.plafu2).toFixed(2);
     }
 
     calculTu1(c_tu1){
         if(c_tu1) this._$tu1 = c_tu1;
         if(this._$brut > this._$plafu1){    
-            this.tu1 = this._$plafu1 - this._$tu1;
-            this._$tu1 += this.tu1;
+            this.tu1 = +(this._$plafu1 - this._$tu1).toFixed(2);
+            this._$tu1 += +this.tu1.toFixed(2);
         }else{
-         this.tu1 = this._$brut - this._$tu1;
+         this.tu1 = +(this._$brut - this._$tu1).toFixed(2);
          this._$tu1 += this.tu1;
         }
         this.pourcentTu1 = this.calculPourcentagePlafondTu1(this._$brut, this._$plafu1);
@@ -45,10 +45,10 @@ class CalculTranche{
     calculTu2(c_tu2){ 
         if(c_tu2) this._$tu2 = c_tu2;
         if(this._$brut > this._$plafu2) {
-            this.tu2 = this._$plafu2 - this._$tu2 - this._$plafu1;
+            this.tu2 = +(this._$plafu2 - this._$tu2 - this._$plafu1).toFixed(2);
             this._$tu2 = this.tu2;
         } else {
-            this.tu2 = this._$brut - this._$tu2 - this._$tu1;
+            this.tu2 = +(this._$brut - this._$tu2 - this._$tu1).toFixed(2);
             this._$tu2 = this.tu2;
         }
         this.pourcentTu2 = this.calculPourcentagePlafondTu2(this._$brut, this._$plafu2);
@@ -65,7 +65,7 @@ class CalculTranche{
 
 
     calculPlafU2(){
-        return this.plafu2 = this.plafu1 * 8;
+        return this.plafu2 = +this.plafu1.toFixed(2) * 8;
     }
 
     calculTranche(){
