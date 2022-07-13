@@ -2,10 +2,13 @@ const saisieMoisCourant = document.querySelector('#moisCourant');
 const saisiePmss = document.querySelector('#plafu');
 const saisieSalaireBrut = document.querySelector('#brut');
 const calculer = document.querySelector('#calculer');
+const conteneurTranchesId = document.querySelector('#conteneurTranches');
 
-
-const moisPeriode = [];
+let moisPeriode = [];
 let cumulTrancheHtml = "";
+let tableauTranche = [];
+let compteur = 0;
+let dom = null;
 
 function calculerTranche(moisCourant, moisPrec){
     moisCourant.cumulBrut(moisPrec._$brut);
@@ -39,9 +42,11 @@ calculer.addEventListener('click', (event) => {
         calculerTranche(periodeCourante, dataMoisPrec);
     }
 
+    tableauTranche.push(periodeCourante);
     constructionHtmlCode(periodeCourante);
-    supprimerSaisie();
+    //supprimerSaisie();
 });
+
 
 function supprimerSaisie(){
     saisieMoisCourant.value = "";
@@ -49,9 +54,26 @@ function supprimerSaisie(){
     saisieSalaireBrut.value = "";
 }
 
-function constructionHtmlCode(classMoisEnCours){
-    let dom = new ManipulationDOM(classMoisEnCours);
-    cumulTrancheHtml += dom.template();
-    dom.render(cumulTrancheHtml);
+function handlerClick(event){
+    let id = +event.path[1].id;
+    tableauTranche.splice(+id, 1);
+    constructionHtmlCode();
+    moisPeriode.pop();
+}
+
+function constructionHtmlCode(){
+    let html = "";
+    let div = null;
+    for(let i = 0; i < tableauTranche.length; i++){
+        dom = new ManipulationDOM(tableauTranche[i]);
+        div = document.createElement('div');
+        div.className = `tranches`;
+        div.setAttribute('id', i);
+        div.innerHTML = dom.template(i === tableauTranche.length -1);
+        html += div.outerHTML;
+        dom.styleTu1();
+    }
+
+    dom.render(html);
 }
 
